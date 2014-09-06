@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_list_review"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IGN"
+        android:gravity="center"
+        android:background="#ff444444"
+        android:id="@+id/review_site"
+        android:textSize="30dp" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_site"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_alignParentLeft="true"
+        android:text="&#8226; Rating: 9.0 - Amazing"
+        android:id="@+id/rating"
+        android:textColor="#ff000302" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_alignParentLeft="true"
+        android:text="&#8226; Community Rating: 9.0 - Amazing"
+        android:id="@+id/community_rating"
+        android:textColor="#ff000302" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/community_rating">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0000EE"
+            android:layout_weight=".5"
+            android:text="Review"
+            android:gravity="center"
+            android:textSize="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0000EE"
+            android:layout_weight=".5"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Video Review"
+            android:textSize="10dp"/>
+        </LinearLayout>
+</RelativeLayout>

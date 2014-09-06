@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_list_review">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff444444"
+        android:text="Ga"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"/>
+
+    <View android:id="@+id/strut"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ff444444"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        android:textColor="#ff000000"
+        android:layout_alignRight="@id/strut"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/rating"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Community Rating"
+        android:textColor="#ff000000"
+        android:id="@+id/community_rating"
+        android:layout_alignLeft="@id/strut"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/rating"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.0"
+        android:textColor="#ff000000"
+        android:id="@+id/rating_value"
+        android:layout_below="@id/rating"
+        android:layout_alignRight="@id/strut"
+        android:layout_alignParentLeft="true"
+        android:textSize="25dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9.1"
+        android:textColor="#ff000000"
+        android:id="@+id/community_rating_value"
+        android:layout_below="@id/community_rating"
+        android:layout_alignLeft="@id/strut"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/rating_value"
+        android:textSize="25dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Great"
+        android:textColor="#ff000000"
+        android:id="@+id/rating_description"
+        android:layout_below="@id/rating_value"
+        android:layout_alignRight="@id/strut"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amazing"
+        android:textColor="#ff000000"
+        android:id="@+id/community_rating_description"
+        android:layout_below="@id/community_rating_value"
+        android:layout_alignLeft="@id/strut"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/rating_value"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0000EE"
+        android:layout_weight=".5"
+        android:text="Review"
+        android:gravity="center"
+        android:layout_below="@id/rating_description"
+        android:layout_alignRight="@id/strut"
+        android:layout_alignParentLeft="true"
+        android:textSize="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0000EE"
+        android:layout_weight=".5"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Video Review"
+        android:layout_below="@id/community_rating_description"
+        android:layout_alignLeft="@id/strut"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/rating_value"
+        android:textSize="10dp"/>
+
+</RelativeLayout>
