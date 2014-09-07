@@ -37,12 +37,12 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
         rating_description.setText(values[position].ratingDescription);
         TextView community_rating_description = (TextView) rowView.findViewById(R.id.community_rating_description);
         community_rating_description.setText(values[position].communityRatingDescription);
-        TextView review = (TextView) rowView.findViewById(R.id.review);
+        TextView review = (TextView) rowView.findViewById(R.id.review_link);
         review.setClickable(true);
         review.setMovementMethod(LinkMovementMethod.getInstance());
         String text = "<a href='"+ values[position].reviewLink + "'>Review</a>";
         review.setText(Html.fromHtml(text));
-        TextView video_review = (TextView) rowView.findViewById(R.id.video_review);
+        TextView video_review = (TextView) rowView.findViewById(R.id.video_review_link);
         video_review.setClickable(true);
         video_review.setMovementMethod(LinkMovementMethod.getInstance());
         String text2 = "<a href='"+ values[position].videoReviewLink + "'>Video Review</a>";

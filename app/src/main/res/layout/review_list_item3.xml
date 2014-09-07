@@ -99,7 +99,7 @@
         android:layout_alignRight="@id/strut"
         android:layout_alignParentLeft="true"
         android:textSize="10dp"
-        android:id="@+id/review"/>
+        android:id="@+id/review_link"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,6 +113,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignRight="@+id/rating_value"
         android:textSize="10dp"
-        android:id="@+id/video_review"/>
+        android:id="@+id/video_review_link"/>
 
 </RelativeLayout>
