@@ -26,27 +26,58 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        Review review = values[position];
         View rowView = inflater.inflate(R.layout.review_list_item3, parent, false);
-        TextView site = (TextView) rowView.findViewById(R.id.review_site);
-        site.setText(values[position].site);
-        TextView rating = (TextView) rowView.findViewById(R.id.rating_value);
-        rating.setText(values[position].rating);
-        TextView community_rating = (TextView) rowView.findViewById(R.id.community_rating_value);
-        community_rating.setText(values[position].communityRating);
-        TextView rating_description = (TextView) rowView.findViewById(R.id.rating_description);
-        rating_description.setText(values[position].ratingDescription);
-        TextView community_rating_description = (TextView) rowView.findViewById(R.id.community_rating_description);
-        community_rating_description.setText(values[position].communityRatingDescription);
-        TextView review = (TextView) rowView.findViewById(R.id.review_link);
-        review.setClickable(true);
-        review.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "<a href='"+ values[position].reviewLink + "'>Review</a>";
-        review.setText(Html.fromHtml(text));
-        TextView video_review = (TextView) rowView.findViewById(R.id.video_review_link);
-        video_review.setClickable(true);
-        video_review.setMovementMethod(LinkMovementMethod.getInstance());
-        String text2 = "<a href='"+ values[position].videoReviewLink + "'>Video Review</a>";
-        video_review.setText(Html.fromHtml(text2));
+        handleTextViewWithDefault(rowView, R.id.review_site, review.site, context.getString(R.string.default_site));
+        handleTextViewWithDefault(rowView, R.id.rating_value, review.rating, context.getString(R.string.default_rating));
+        handleTextViewWithDefault(rowView, R.id.community_rating_value, review.communityRating, context.getString(R.string.default_rating));
+        handleTextViewPair(
+                rowView,
+                R.id.rating_description,
+                R.id.community_rating_description,
+                review.ratingDescription,
+                review.communityRatingDescription
+        );
+        handleLink(rowView, R.id.review_link, review.reviewLink, context.getString(R.string.review_link_description));
+        handleLink(rowView, R.id.video_review_link, review.videoReviewLink, context.getString(R.string.video_link_description));
         return rowView;
+    }
+
+    private void handleTextViewWithDefault(View parentView, int viewId, String text, String defaultText){
+        TextView view = (TextView) parentView.findViewById(viewId);
+        if(text != null){
+            view.setText(text);
+        } else{
+            view.setText(defaultText);
+        }
+    }
+
+    private void handleTextViewPair(View parentView, int viewId1, int viewId2, String text1, String text2){
+        TextView view1 = (TextView) parentView.findViewById(viewId1);
+        TextView view2 = (TextView) parentView.findViewById(viewId2);
+        if (text1 == null && text2 == null){
+            view1.setVisibility(View.GONE);
+            view2.setVisibility(View.GONE);
+        } else if (text1 == null) {
+            view1.setVisibility(View.INVISIBLE);
+            view2.setText(text2);
+        } else if (text2 == null){
+            view1.setText(text1);
+            view2.setVisibility(View.INVISIBLE);
+        } else {
+            view1.setText(text1);
+            view2.setText(text2);
+        }
+    }
+
+    private void handleLink(View parentView, int viewId, String url, String linkDescriptor){
+        TextView view = (TextView) parentView.findViewById(viewId);
+        if (url == null){
+            view.setVisibility(View.GONE);
+        } else {
+            view.setMovementMethod(LinkMovementMethod.getInstance());
+            String text = "<a href='"+ url + "'>" + linkDescriptor + "</a>";
+            view.setText(Html.fromHtml(text));
+        }
     }
 }

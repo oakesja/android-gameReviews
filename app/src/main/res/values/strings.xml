@@ -9,7 +9,9 @@
     <string name="title_activity_game">Game</string>
     <string name="action_search">ActionSearch</string>
     <string name="rating">Rating</string>
-    <string name="communityRating">Community Rating</string>
-    <string name="ratingPlaceHolder">-.-</string>
-    <string name="descriptionPlaceHolder">---</string>
+    <string name="community_rating">Community Rating</string>
+    <string name="review_link_description">Review</string>
+    <string name="video_link_description">Video Review</string>
+    <string name="default_rating">-.-</string>
+    <string name="default_site">Unkown</string>
 </resources>

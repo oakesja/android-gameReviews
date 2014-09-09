@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/communityRating"
+        android:text="@string/community_rating"
         android:textColor="#ff000000"
         android:layout_below="@id/review_site"
         android:id="@+id/community_rating"
@@ -45,7 +45,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ratingPlaceHolder"
         android:textColor="#ff000000"
         android:id="@+id/rating_value"
         android:layout_below="@id/rating"
@@ -57,7 +56,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ratingPlaceHolder"
         android:textColor="#ff000000"
         android:id="@+id/community_rating_value"
         android:layout_below="@id/community_rating"
@@ -71,7 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ff000000"
-        android:text="@string/descriptionPlaceHolder"
         android:id="@+id/rating_description"
         android:layout_below="@id/rating_value"
         android:layout_alignRight="@id/strut"
@@ -82,7 +79,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ff000000"
-        android:text="@string/descriptionPlaceHolder"
         android:id="@+id/community_rating_description"
         android:layout_below="@id/community_rating_value"
         android:layout_alignLeft="@id/strut"
