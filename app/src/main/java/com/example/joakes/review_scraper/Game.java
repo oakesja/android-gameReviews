@@ -8,4 +8,12 @@ public class Game {
     public Review[] reviews;
     public String averageRating;
     public String averageCommunityRating;
+
+    Game(GameDescription description, Review[] reviews,
+         String averageRating, String averageCommunityRating){
+        this.description = description;
+        this.reviews = reviews;
+        this.averageRating = averageRating;
+        this.averageCommunityRating = averageCommunityRating;
+    }
 }
