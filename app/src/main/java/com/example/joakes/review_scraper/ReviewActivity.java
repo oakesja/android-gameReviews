@@ -2,15 +2,11 @@ package com.example.joakes.review_scraper;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,15 +16,24 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
 
-public class GameActivity extends ListActivity {
+public class ReviewActivity extends ListActivity {
+    private static final String API_URL = "http://reviewscraper.herokuapp.com/reviews/all/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        String game = intent.getStringExtra(MainActivity.CHOSEN_GAME).replace(" ", "%20");
+        String url = API_URL + game;
+        Log.i("Backend Call", url);
+
         final Context self = this;
         Ion.with(this)
-                .load("http://reviewscraper.herokuapp.com/reviews/all/fallout-new-vegas")
+                .load(url)
                 .asJsonObject()
                 .setCallback(new FutureCallback<JsonObject>() {
                     @Override
