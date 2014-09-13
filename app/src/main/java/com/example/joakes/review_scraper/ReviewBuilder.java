@@ -12,12 +12,8 @@ public class ReviewBuilder {
     public String reviewLink;
     public String videoReviewLink;
 
-    public ReviewBuilder() {
-    }
+    public ReviewBuilder() {}
 
-//    public static ReviewBuilder aReview() {
-//        return new ReviewBuilder();
-//    }
 
     public ReviewBuilder withSite(String site) {
         this.site = site;

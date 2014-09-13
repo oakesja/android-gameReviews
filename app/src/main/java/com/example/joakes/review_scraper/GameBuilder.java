@@ -9,12 +9,7 @@ public class GameBuilder {
     public String averageRating;
     public String averageCommunityRating;
 
-    private GameBuilder() {
-    }
-
-//    public static GameBuilder aGame() {
-//        return new GameBuilder();
-//    }
+    private GameBuilder() {}
 
     public GameBuilder withDescription(GameDescription description) {
         this.description = description;
