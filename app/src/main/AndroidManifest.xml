@@ -12,26 +12,21 @@
         android:theme="@style/Theme.AppCompat" >
         <activity
             android:theme="@style/Theme.AppCompat.Light"
-            android:name=".MyActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName=".MyActivity" >
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_game"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MyActivity" />
-        </activity>
-        <activity
-            android:name=".GameActivity"
-            android:label="@string/title_activity_game"
-            android:parentActivityName=".MyActivity" >
+                android:value=".MainActivity" />
+
         </activity>
     </application>
 

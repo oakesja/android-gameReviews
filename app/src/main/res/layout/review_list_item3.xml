@@ -7,7 +7,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IGN"
         android:gravity="center"
         android:background="#ff444444"
         android:id="@+id/review_site"
@@ -23,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rating"
+        android:text="@string/rating"
         android:textColor="#ff000000"
         android:layout_below="@id/review_site"
         android:layout_alignRight="@id/strut"
@@ -34,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Community Rating"
+        android:text="@string/community_rating"
         android:textColor="#ff000000"
         android:layout_below="@id/review_site"
         android:id="@+id/community_rating"
@@ -46,7 +45,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9.0"
         android:textColor="#ff000000"
         android:id="@+id/rating_value"
         android:layout_below="@id/rating"
@@ -58,7 +56,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="9.1"
         android:textColor="#ff000000"
         android:id="@+id/community_rating_value"
         android:layout_below="@id/community_rating"
@@ -71,7 +68,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Great"
         android:textColor="#ff000000"
         android:id="@+id/rating_description"
         android:layout_below="@id/rating_value"
@@ -82,7 +78,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Amazing"
         android:textColor="#ff000000"
         android:id="@+id/community_rating_description"
         android:layout_below="@id/community_rating_value"
@@ -100,7 +95,7 @@
         android:layout_alignRight="@id/strut"
         android:layout_alignParentLeft="true"
         android:textSize="10dp"
-        android:id="@+id/review"/>
+        android:id="@+id/review_link"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,6 +109,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignRight="@+id/rating_value"
         android:textSize="10dp"
-        android:id="@+id/video_review"/>
+        android:id="@+id/video_review_link"/>
 
 </RelativeLayout>
