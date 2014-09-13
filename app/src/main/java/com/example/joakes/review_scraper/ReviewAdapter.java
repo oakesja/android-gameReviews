@@ -3,6 +3,7 @@ package com.example.joakes.review_scraper;
 import android.content.Context;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,10 +66,9 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
         }
     }
 
-    // could use handleTextViewPair
     private void handleLink(int viewId, String url, String linkDescriptor){
         TextView view = (TextView) rowView.findViewById(viewId);
-        if (url == null){
+        if (url == null || !Patterns.WEB_URL.matcher(url).matches()){
             view.setVisibility(View.GONE);
         } else {
             view.setMovementMethod(LinkMovementMethod.getInstance());

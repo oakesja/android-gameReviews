@@ -43,8 +43,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -63,7 +63,27 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
+                .withReviewLink("www.google.com")
+                .build();
+        setTextViews(review);
+        assertEquals(review.site, site.getText());
+        assertEquals(review.rating, rating.getText());
+        assertEquals(review.communityRating, communityRating.getText());
+        assertEquals(review.ratingDescription, ratingDescription.getText());
+        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertValidLink(reviewLink, review_description);
+        assertEquals(View.GONE, videoLink.getVisibility());
+    }
+
+    public void testInvalidVideoLink(){
+        Review review = new ReviewBuilder()
+                .withSite("site")
+                .withRating("9.0")
+                .withCommunityRating("8.9")
+                .withRatingDescription("amazing")
+                .withCommunityRatingDescription("great")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("/video/review")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -82,7 +102,27 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withVideoReviewLink("video")
+                .withVideoReviewLink("www.google.com")
+                .build();
+        setTextViews(review);
+        assertEquals(review.site, site.getText());
+        assertEquals(review.rating, rating.getText());
+        assertEquals(review.communityRating, communityRating.getText());
+        assertEquals(review.ratingDescription, ratingDescription.getText());
+        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertEquals(View.GONE, reviewLink.getVisibility());
+        assertValidLink(videoLink, video_description);
+    }
+
+    public void testInvalidReviewLink(){
+        Review review = new ReviewBuilder()
+                .withSite("site")
+                .withRating("9.0")
+                .withCommunityRating("8.9")
+                .withRatingDescription("amazing")
+                .withCommunityRatingDescription("great")
+                .withReviewLink("/review")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -100,8 +140,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withRating("9.0")
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -119,8 +159,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withRating("9.0")
                 .withCommunityRating("8.9")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -137,8 +177,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withSite("site")
                 .withRating("9.0")
                 .withCommunityRating("8.9")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -156,8 +196,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withRating("9.0")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -175,8 +215,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(review.site, site.getText());
@@ -194,8 +234,8 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withCommunityRating("8.9")
                 .withRatingDescription("amazing")
                 .withCommunityRatingDescription("great")
-                .withReviewLink("review")
-                .withVideoReviewLink("video")
+                .withReviewLink("www.google.com")
+                .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
         assertEquals(default_site, site.getText());
