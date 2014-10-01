@@ -2,8 +2,8 @@ package com.example.joakes.review_scraper;
 
 import android.app.Activity;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.example.joakes.review_scraper.helpers.TextViewFiller;
 import com.koushikdutta.ion.Ion;
 
 /**
@@ -12,18 +12,22 @@ import com.koushikdutta.ion.Ion;
 public class DescriptionFiller {
     private Game game;
 
-    DescriptionFiller(Game description){
+    public DescriptionFiller(Game description){
         this.game = description;
     }
 
     public void fillContextWithDescription(Activity activity){
         ImageView coverArt = (ImageView)activity.findViewById(R.id.cover_art);
-        Ion.with(coverArt).load(game.description.pictureLink);
-        TextView title = (TextView)activity.findViewById(R.id.game_title);
-        title.setText(game.description.gameName);
-        TextView avg_rating = (TextView)activity.findViewById(R.id.average_rating);
-        avg_rating.setText(game.averageRating);
-        TextView avg_com_rating = (TextView)activity.findViewById(R.id.average_community_rating);
-        avg_com_rating.setText(game.averageCommunityRating);
+        //TODO add error and tests
+        Ion.with(coverArt)
+                .load(game.description.pictureLink);
+
+        TextViewFiller tvf = new TextViewFiller(activity);
+        String defaultRating = activity.getString(R.string.default_rating);
+        tvf.setTextOrDisappear(R.id.game_title, game.description.gameName);
+        tvf.setCorrectText(R.id.average_rating, game.averageRating, defaultRating);
+        tvf.setCorrectText(R.id.average_community_rating, game.averageCommunityRating, defaultRating);
     }
+
+
 }

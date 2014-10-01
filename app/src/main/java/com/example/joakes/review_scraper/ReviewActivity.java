@@ -25,14 +25,15 @@ public class ReviewActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        String chosen_game = intent.getStringExtra(MainActivity.CHOSEN_GAME).replace(" ", "%20");
-        String url = API_URL + chosen_game;
-        Log.i("Backend Call", url);
-
+        // TODO need better error handling than try catch
         try {
+            Intent intent = getIntent();
+            String chosen_game = intent.getStringExtra(MainActivity.CHOSEN_GAME).replace(" ", "%20");
+            String url = API_URL + chosen_game;
+            Log.i("Backend Call", url);
+
             Game game = Ion.with(this)
                     .load(url)
                     .as(Game.class)
