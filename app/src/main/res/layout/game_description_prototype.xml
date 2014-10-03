@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <TextView
+        android:id="@+id/game_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destiny"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <View android:id="@+id/strut"
+        android:layout_below="@id/game_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ff444444"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/cover_art"
+        android:layout_alignRight="@+id/strut"
+        android:layout_below="@id/game_title"
+        android:src="@drawable/destiny"
+        android:scaleType="centerInside"/>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/average_rating"
+        android:layout_below="@id/game_title"
+        android:layout_toRightOf="@+id/strut"/>
+</RelativeLayout>

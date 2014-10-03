@@ -14,7 +14,7 @@ public class GameDescriptionBuilder {
     public String esrbLink;
     public String pictureLink;
 
-    private GameDescriptionBuilder() {}
+    public GameDescriptionBuilder() {}
 
     public GameDescriptionBuilder withGameName(String gameName) {
         this.gameName = gameName;

@@ -39,6 +39,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
         return rowView;
     }
 
+    // TODO use text view filler here
     private void handleTextViewWithDefault(int viewId, String text, String defaultText){
         TextView view = (TextView) rowView.findViewById(viewId);
         if(text != null){

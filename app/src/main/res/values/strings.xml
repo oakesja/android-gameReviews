@@ -14,4 +14,6 @@
     <string name="video_link_description">Video Review</string>
     <string name="default_rating">-.-</string>
     <string name="default_site">Unkown</string>
+    <string name="average_rating">Average Site Rating</string>
+    <string name="average_community_rating">Average Com. Rating</string>
 </resources>
