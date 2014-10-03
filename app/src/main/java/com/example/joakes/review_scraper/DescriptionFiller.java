@@ -2,7 +2,6 @@ package com.example.joakes.review_scraper;
 
 import android.app.Activity;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.joakes.review_scraper.helpers.TextViewFiller;
 import com.koushikdutta.ion.Ion;
@@ -26,9 +25,9 @@ public class DescriptionFiller {
                 .error(R.drawable.no_cover_art)
                 .load(game.description.pictureLink);
         String defaultRating = activity.getString(R.string.default_rating);
-        tvf.setTextOrDisappear(R.id.game_title, game.description.gameName);
-        tvf.setCorrectText(R.id.average_rating, game.averageRating, defaultRating);
-        tvf.setCorrectText(R.id.average_community_rating, game.averageCommunityRating, defaultRating);
+        tvf.setTextOrSetAsGone(R.id.game_title, game.description.gameName);
+        tvf.setTextOrSetAsDefault(R.id.average_rating, game.averageRating, defaultRating);
+        tvf.setTextOrSetAsDefault(R.id.average_community_rating, game.averageCommunityRating, defaultRating);
     }
 
 

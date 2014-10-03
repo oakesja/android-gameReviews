@@ -14,7 +14,7 @@ public class TextViewFiller {
         mActivity = activity;
     }
 
-    public void setTextOrDisappear(int viewId, String text){
+    public void setTextOrSetAsGone(int viewId, String text){
         TextView view = (TextView)mActivity.findViewById(viewId);
         if(text != null){
             view.setText(text);
@@ -23,7 +23,7 @@ public class TextViewFiller {
         }
     }
 
-    public void setCorrectText(int viewId, String text, String defaultText){
+    public void setTextOrSetAsDefault(int viewId, String text, String defaultText){
         TextView view = (TextView)mActivity.findViewById(viewId);
         if(text != null){
             view.setText(text);
