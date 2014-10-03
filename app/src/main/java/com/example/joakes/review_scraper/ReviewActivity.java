@@ -1,19 +1,12 @@
 package com.example.joakes.review_scraper;
 
-import android.app.Activity;
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
 
@@ -38,8 +31,8 @@ public class ReviewActivity extends ListActivity {
                     .load(url)
                     .as(Game.class)
                     .get();
-            DescriptionFiller filler = new DescriptionFiller(game);
-            filler.fillContextWithDescription(this);
+            DescriptionFiller filler = new DescriptionFiller(this);
+            filler.fillContextWithDescription(game);
             ReviewAdapter adapter = new ReviewAdapter(this, game.reviews);
             setListAdapter(adapter);
         } catch (Exception e){
