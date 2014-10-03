@@ -22,6 +22,7 @@ public class DescriptionFiller {
         ImageView coverArt = (ImageView)activity.findViewById(R.id.cover_art);
         //TODO add error and tests also consider wrapper class for Ion
         Ion.with(coverArt)
+                .placeholder(R.drawable.no_cover_art)
                 .error(R.drawable.no_cover_art)
                 .load(game.description.pictureLink);
         String defaultRating = activity.getString(R.string.default_rating);

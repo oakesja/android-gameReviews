@@ -61,7 +61,8 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
         new DescriptionFiller(mActivity).fillContextWithDescription(game);
         assertThat(title).hasText("test");
         assertThat(avgRating).hasText("9.5");
-        assertThat(avgComRating).hasText("9.0");;
+        assertThat(avgComRating).hasText("9.0");
+        assertNotNull(coverArt.getDrawable());
     }
 
     @UiThreadTest
@@ -78,7 +79,7 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
         assertThat(title).isGone();
         assertThat(avgRating).hasText("9.5");
         assertThat(avgComRating).hasText("9.0");
-
+        assertNotNull(coverArt.getDrawable());
     }
 
     @UiThreadTest
@@ -95,6 +96,7 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
         assertThat(title).hasText("test");
         assertThat(avgRating).hasText("-.-");
         assertThat(avgComRating).hasText("9.0");
+        assertNotNull(coverArt.getDrawable());
     }
 
     @UiThreadTest
@@ -111,5 +113,23 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
         assertThat(title).hasText("test");
         assertThat(avgRating).hasText("9.5");
         assertThat(avgComRating).hasText("-.-");
+        assertNotNull(coverArt.getDrawable());
+    }
+
+    @UiThreadTest
+    public void testDescriptionFillerMissingPictureLink(){
+        GameDescription descr = new GameDescriptionBuilder()
+                .withGameName("test")
+                .build();
+        Game game = new GameBuilder()
+                .withDescription(descr)
+                .withAverageRating("9.5")
+                .withAverageCommunityRating("9.0")
+                .build();
+        new DescriptionFiller(mActivity).fillContextWithDescription(game);
+        assertThat(title).hasText("test");
+        assertThat(avgRating).hasText("9.5");
+        assertThat(avgComRating).hasText("9.0");
+        assertNotNull(coverArt.getDrawable());
     }
 }
