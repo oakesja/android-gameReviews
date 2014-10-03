@@ -3,10 +3,8 @@ package com.example.joakes.review_scraper.tests;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.example.joakes.review_scraper.DescriptionFiller;
 import com.example.joakes.review_scraper.Game;

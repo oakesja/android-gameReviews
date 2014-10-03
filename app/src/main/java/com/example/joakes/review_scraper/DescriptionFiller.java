@@ -21,7 +21,7 @@ public class DescriptionFiller {
 
     public void fillContextWithDescription(Game game){
         ImageView coverArt = (ImageView)activity.findViewById(R.id.cover_art);
-        //TODO add error and tests
+        //TODO add error and tests also consider wrapper class for Ion
         Ion.with(coverArt)
                 .error(R.drawable.no_cover_art)
                 .load(game.description.pictureLink);
