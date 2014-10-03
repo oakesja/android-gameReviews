@@ -16,6 +16,8 @@ import com.example.joakes.review_scraper.GameDescriptionBuilder;
 import com.example.joakes.review_scraper.R;
 import com.example.joakes.review_scraper.ReviewActivity;
 
+import static org.assertj.android.api.Assertions.assertThat;
+
 /**
  * Created by joakes on 9/14/14.
  */
@@ -59,9 +61,9 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
                 .withAverageCommunityRating("9.0")
                 .build();
         new DescriptionFiller(mActivity).fillContextWithDescription(game);
-        assertEquals("test", title.getText());
-        assertEquals("9.5", avgRating.getText());
-        assertEquals("9.0", avgComRating.getText());
+        assertThat(title).hasText("test");
+        assertThat(avgRating).hasText("9.5");
+        assertThat(avgComRating).hasText("9.0");;
     }
 
     @UiThreadTest
@@ -75,9 +77,9 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
                 .withAverageCommunityRating("9.0")
                 .build();
         new DescriptionFiller(mActivity).fillContextWithDescription(game);
-        assertEquals(View.GONE, title.getVisibility());
-        assertEquals("9.5", avgRating.getText());
-        assertEquals("9.0", avgComRating.getText());
+        assertThat(title).isGone();
+        assertThat(avgRating).hasText("9.5");
+        assertThat(avgComRating).hasText("9.0");
 
     }
 
@@ -92,9 +94,9 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
                 .withAverageCommunityRating("9.0")
                 .build();
         new DescriptionFiller(mActivity).fillContextWithDescription(game);
-        assertEquals("test", title.getText());
-        assertEquals("-.-", avgRating.getText());
-        assertEquals("9.0", avgComRating.getText());
+        assertThat(title).hasText("test");
+        assertThat(avgRating).hasText("-.-");
+        assertThat(avgComRating).hasText("9.0");
     }
 
     @UiThreadTest
@@ -108,8 +110,8 @@ public class DescriptionFillerTest extends ActivityInstrumentationTestCase2<Revi
                 .withAverageRating("9.5")
                 .build();
         new DescriptionFiller(mActivity).fillContextWithDescription(game);
-        assertEquals("test", title.getText());
-        assertEquals("9.5", avgRating.getText());
-        assertEquals("-.-", avgComRating.getText());
+        assertThat(title).hasText("test");
+        assertThat(avgRating).hasText("9.5");
+        assertThat(avgComRating).hasText("-.-");
     }
 }
