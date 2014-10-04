@@ -10,6 +10,9 @@ import com.example.joakes.review_scraper.Review;
 import com.example.joakes.review_scraper.ReviewAdapter;
 import com.example.joakes.review_scraper.ReviewBuilder;
 
+import static org.assertj.android.api.Assertions.assertThat;
+
+
 /**
  * Created by joakes on 9/7/14.
  */
@@ -47,11 +50,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -66,13 +69,13 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
-        assertEquals(View.GONE, videoLink.getVisibility());
+        assertThat(videoLink).isGone();
     }
 
     public void testInvalidVideoLink(){
@@ -86,13 +89,13 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("/video/review")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
-        assertEquals(View.GONE, videoLink.getVisibility());
+        assertThat(videoLink).isGone();
     }
 
     public void testMissingReviewLink(){
@@ -105,12 +108,12 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
-        assertEquals(View.GONE, reviewLink.getVisibility());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
+        assertThat(reviewLink).isGone();
         assertValidLink(videoLink, video_description);
     }
 
@@ -125,12 +128,12 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
-        assertEquals(View.GONE, reviewLink.getVisibility());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
+        assertThat(reviewLink).isGone();
         assertValidLink(videoLink, video_description);
     }
 
@@ -144,11 +147,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(View.INVISIBLE, communityRatingDescription.getVisibility());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).isInvisible();
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -163,11 +166,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(View.INVISIBLE, ratingDescription.getVisibility());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).isInvisible();
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -181,11 +184,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(View.GONE, ratingDescription.getVisibility());
-        assertEquals(View.GONE, communityRatingDescription.getVisibility());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).isGone();
+        assertThat(communityRatingDescription).isGone();
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -200,11 +203,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(default_rating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(default_rating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -219,11 +222,11 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(review.site, site.getText());
-        assertEquals(default_rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(review.site);
+        assertThat(rating).hasText(default_rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
@@ -238,19 +241,18 @@ public class ReviewAdapterTest extends AndroidTestCase {
                 .withVideoReviewLink("www.google.com")
                 .build();
         setTextViews(review);
-        assertEquals(default_site, site.getText());
-        assertEquals(review.rating, rating.getText());
-        assertEquals(review.communityRating, communityRating.getText());
-        assertEquals(review.ratingDescription, ratingDescription.getText());
-        assertEquals(review.communityRatingDescription, communityRatingDescription.getText());
+        assertThat(site).hasText(default_site);
+        assertThat(rating).hasText(review.rating);
+        assertThat(communityRating).hasText(review.communityRating);
+        assertThat(ratingDescription).hasText(review.ratingDescription);
+        assertThat(communityRatingDescription).hasText(review.communityRatingDescription);
         assertValidLink(reviewLink, review_description);
         assertValidLink(videoLink, video_description);
     }
 
     private void assertValidLink(TextView link, String linkDescriptor){
-        assertEquals(View.VISIBLE, link.getVisibility());
+        assertThat(link).isVisible().isClickable();
         assertEquals(LinkMovementMethod.getInstance(), link.getMovementMethod());
-        assertEquals(true, link.getLinksClickable());
         assertEquals(linkDescriptor, link.getText().toString());
     }
 

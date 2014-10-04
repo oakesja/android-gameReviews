@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testPackageName "com.example.joakes.review_scraper.tests"
-        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+//        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
 
     }
     buildTypes {
