@@ -23,7 +23,7 @@ public class ReviewActivity extends ListActivity {
         // TODO need better error handling than try catch
         try {
             Intent intent = getIntent();
-            String chosen_game = intent.getStringExtra(MainActivity.CHOSEN_GAME).replace(" ", "%20");
+            String chosen_game = intent.getStringExtra(SearchAdapter.GAME_KEY).replace(" ", "%20");
             String url = API_URL + chosen_game;
             Log.i("Backend Call", url);
 
