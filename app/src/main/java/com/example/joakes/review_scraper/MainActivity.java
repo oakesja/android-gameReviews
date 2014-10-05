@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void getReviews(View view) {
-        Intent intent = new Intent(this, ReviewActivity.class);
+        Intent intent = new Intent(this, SearchActivity.class);
         EditText text = (EditText) findViewById(R.id.edit_message);
         Log.i("MainActivity selected game", text.getText().toString());
         intent.putExtra(CHOSEN_GAME, text.getText().toString());

@@ -26,9 +26,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:20.0.0'
-    compile 'com.koushikdutta.ion:ion:1.+'
-//    compile 'com.github.tomakehurst:wiremock:1.46'
+    //    compile 'com.github.tomakehurst:wiremock:1.46'
     androidTestCompile files('libs/espresso-1.1-bundled.jar')
     androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.koushikdutta.ion:ion:1.+'
 }
