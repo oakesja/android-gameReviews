@@ -36,8 +36,8 @@ public class SearchAdapter  extends ArrayAdapter<SearchResult> {
         name.setText(result.gameName);
         platforms.setText(result.platforms);
         Ion.with(coverArt)
-//                .placeholder(R.drawable.no_cover_art)
-//                .error(R.drawable.no_cover_art)
+                .placeholder(R.drawable.no_cover_art)
+                .error(R.drawable.no_cover_art)
                 .load(result.pictureLink);
         return rowView;
     }

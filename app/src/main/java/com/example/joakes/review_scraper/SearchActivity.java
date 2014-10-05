@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
 
@@ -24,8 +25,10 @@ public class SearchActivity extends ListActivity {
         // TODO need better error handling than try catch
         try {
             Intent intent = getIntent();
-            String chosen_game = intent.getStringExtra(MainActivity.CHOSEN_GAME).replace(" ", "%20");
-            String url = API_URL + chosen_game;
+            String chosen_game = intent.getStringExtra(MainActivity.CHOSEN_GAME);
+            TextView t = (TextView)findViewById(R.id.search_results);
+            t.setText(getString(R.string.search_results) + " '" + chosen_game + "'");
+            String url = API_URL + chosen_game.replace(" ", "%20");
             Log.i("Backend Call", url);
 
             SearchResult[] results = Ion.with(this)

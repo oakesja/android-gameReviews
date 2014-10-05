@@ -18,5 +18,5 @@
     <string name="average_rating">Average Site Rating</string>
     <string name="average_community_rating">Average Com. Rating</string>
     <string name="title_activity_search">SearchActivity</string>
-
+    <string name="search_results">Results found for</string>
 </resources>
