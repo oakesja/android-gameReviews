@@ -26,7 +26,7 @@
         android:layout_alignRight="@+id/strut"
         android:layout_below="@id/game_title"
         android:src="@drawable/destiny"
-        android:scaleType="centerInside"/>
+        />
 
     <include
         android:layout_width="match_parent"
