@@ -20,7 +20,7 @@ public class SearchActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // TODO need better error handling than try catch
         try {
